@@ -11,7 +11,7 @@ class CompanyController extends Controller
 {
     public function index()
     {
-        //
+        return view('dashboard', ['companies' => Company::all()->load('activity')]);
     }
 
     public function create()
@@ -22,9 +22,7 @@ class CompanyController extends Controller
 
     public function store(CompanyRequest $request)
     {
-        $validator = $request->validated();
-
-        Company::create($validator);
+        Company::create($request->all());
         return view('send-subscribe');
     }
 }

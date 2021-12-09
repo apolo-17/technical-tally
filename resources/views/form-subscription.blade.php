@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="activity_business" class="block text-sm font-medium text-gray-700">Giro del negocio</label>
-                    <select name="activity_business" autocomplete="activity_business" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <label for="activity_id" class="block text-sm font-medium text-gray-700">Giro del negocio</label>
+                    <select name="activity_id" autocomplete="activity_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option>Actividad</option>
                         @foreach ($activities as $activity)
                             <option value="{{ $activity->id }}">{{ $activity->name }}</option>

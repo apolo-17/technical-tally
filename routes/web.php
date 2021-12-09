@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [CompanyController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/', [CompanyController::class, 'create']);
 Route::post('send-subscription', [CompanyController::class, 'store']);

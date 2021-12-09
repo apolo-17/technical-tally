@@ -9,5 +9,10 @@ class Company extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name_company', 'activity_business', 'name_partner', 'address', 'phone_number', 'email'];
+    protected $fillable = ['name_company', 'activity_id', 'name_partner', 'address', 'phone_number', 'email'];
+
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class);
+    }
 }
