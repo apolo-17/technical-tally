@@ -14,14 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('subscription', [CompanyController::class, 'create']);
+Route::get('/', [CompanyController::class, 'create']);
 Route::post('send-subscription', [CompanyController::class, 'store']);
+
 require __DIR__ . '/auth.php';
